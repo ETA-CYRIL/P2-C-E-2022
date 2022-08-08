@@ -1,6 +1,246 @@
-*{
-    
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+}
+
+ :root {
+    --White: hsl(0, 0%, 100%);
+    --Soft-Pink: hsl(333, 80%, 67%);
+    --Very-Dark-Magenta: hsl(300, 43%, 22%);
+    --Dark-Grayish-Magenta: hsl(303, 10%, 53%);
+    --Light-Grayish-Magenta: hsl(300, 24%, 96%);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 120vh;
+}
+
+.container {
+    max-width: 1520px;
+    padding: 5rem 10rem;
+    width: 100%;
+}
+
+.section1 {
+    display: flex;
+    position: relative;
+    margin-bottom: 4rem;
+    /* margin-top: -5rem; */
+    justify-content: space-between;
+}
+
+.section1 .content h1 {
+    width: 400px;
+    font-size: 3.8rem;
+    margin-bottom: 1rem;
+    color: var(--Very-Dark-Magenta);
+}
+
+.section1 .content p {
+    width: 400px;
+    font-size: 1.2rem;
+    color: var(--Dark-Grayish-Magenta);
+}
+
+.section1 .rating .rating0 {
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    padding: 1rem 4rem 1rem 2rem;
+    background-color: var(--Light-Grayish-Magenta);
+}
+
+.section1 .rating .rating0 span {
+    font-weight: bold;
+    padding-left: 1rem;
+}
+
+.section1 .rating .rating1 {
+    position: relative;
+    right: 6rem;
+}
+
+.section1 .rating .rating2 {
+    position: relative;
+    right: 3rem;
+}
+
+.section2 {
+    display: flex;
+    justify-content: space-between;
+    gap: 0 10px; /**//**/
+    /* border:  3px solid black; */
+}
+
+.section2 .customer {
+    width: 25%; /*30%*/
+    border-radius: 10px;
+    background-color: var(--Very-Dark-Magenta);
+
+}
+
+.section2 .customer img {
+    height: 50px;
+    margin-left: 2rem;
+    border-radius: 50%;
+}
+
+.section2 .customer div {
+    display: flex;
+    margin-top: .6rem;
+    align-items: center;
+    margin-bottom: -2.5rem;
+}
+
+.section2 .customer div p {
+    margin-left: 1rem;
+
+}
+
+.section2 .customer div span {
+    display: block;
+    margin-top: .1rem;
+    color: var(--Soft-Pink);
+}
+
+.section2 .customer P {
+    margin: 2rem;
+    color: var(--Light-Grayish-Magenta);
+}
+
+.section2 .customer p:nth-of-type(1) {
+    font-size: 1.05rem;
+    line-height: 1.3rem;
+}
+
+.section2 .customer2 {
+    position: relative;
+    top: 1.5rem;
+}
+
+.section2 .customer3 {
+    position: relative;
+    top: 3rem;
+}
+.section2 .customer4 { /**//**/
+    position: relative;
+    top: 4rem;
+}
+#description::before{/**//**/
+    content: "this is the default viewport";
+    color: black;
+    position: absolute;
+    left: 40%;
+}
+/* TABLET */ /**//**/
+@media (max-width:1100px){
+    #description::before{
+        content: "this viewport is at <=1100px";
+        color: black;
+        position: absolute;
+        left: 40%;
+    }
+    main{
+        height: auto;
+    }
+    .container{
+        padding: 2.5rem 5rem;
+    }
+    .section1 .content h1 {
+        width: 250px;
+        font-size: 3.0rem;
+    }
+    
+    .section1 .content p {
+        width: 250px;
+        font-size: 1.0rem;
+    }
+
+    .section1 {
+        display: grid;
+        grid-template-columns:50% 50%;
+    }
+    .section1 .rating .rating0 {
+        right: auto;
+    }
+    
+    
+    .section2 {
+        height: auto;
+        display: grid;
+        grid-template-columns:50% 50% ;
+    }
+    .section2 .customer {
+        width: 100%;    
+    }
+    
+}
+/* large phones */
+
+@media (max-width:640px){
+    #description::before{
+        content: "this viewport is at <=640px";
+    }
+    .container{
+        padding: 1.25rem 2.5rem;
+    }    
+    .section1 {
+        grid-template-columns:100%;
+        gap: 20px 0;
+    }
+    .section1 .content{
+        width: 100%;
+        padding: 0 20px;
+    }
+    .section1 .content h1 {
+        width: 100%;
+    }
+    .section1 .content p {
+        width: 100%;
+        
+    }
+    .section2 .customer .text {
+        width: 70%;
+    }
+}
+/* phones */
+@media (max-width:480px){
+    #description::before{
+        content: "this viewport is at <=480px";
+    }
+    .container{
+        padding: 1.25rem 2.5rem;
+    }
+    .section1 .content h1 {
+        font-size: 30px;
+    }
+
+    .section2 {
+        grid-template-columns:100% ;
+    }
+}
+/* small phone */
+@media (max-width:250px){
+    #description::before{
+        content: "this viewport is at <=250px";
+    }
+    .container{
+        padding: .75rem 1.5rem;
+    }
+    .section1 .content h1 {
+        font-size: 20px;
+    }
+
+    .section2 .customer div {
+        display: flex;
+        flex-direction: column;
+    }
+    .section2 .customer div img{
+        margin: auto;
+    }
 }
